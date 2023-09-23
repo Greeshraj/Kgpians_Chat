@@ -10,7 +10,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/chats" element={<Chat />} />
 
-        {/* If the user enters an invalid path in the URL it automatically redirects them to the homepage */}
+{/* for wrong url */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>

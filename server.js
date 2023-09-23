@@ -1,43 +1,42 @@
 const express = require("express");
-const dotenv = require("dotenv");
 const path = require("path");
+require('dotenv').config();
 
 const { connectToMongoDB } = require("./config");
 const { userRoutes, chatRoutes, messageRoutes } = require("./routes");
 const { notFound, errorHandler } = require("./middleware");
+const { default: mongoose } = require("mongoose");
 
-const app = express(); // Use express js in our app
-app.use(express.json()); // Accept JSON data
-dotenv.config({ path: path.join(__dirname, "./.env") }); // Specify a custom path if your file containing environment variables is located elsewhere
-connectToMongoDB(); // Connect to Database
+const app = express(); 
+
+app.use(express.json()); 
+
+ 
+ 
+
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log('Database Connected')
+    })
+    .catch((err) => console.log("Failed to connect Database", err))
+
+ 
+
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-// --------------------------DEPLOYMENT------------------------------
+ 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "./client/build")));
+ 
 
-  app.get("*", (req, res) => {
-    return res.sendFile(
-      path.resolve(__dirname, "client", "build", "index.html")
-    );
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running");
-  });
-}
-
-// --------------------------DEPLOYMENT------------------------------
-
-app.use(notFound); // Handle invalid routes
+app.use(notFound); 
 app.use(errorHandler);
 
 const server = app.listen(process.env.PORT, () =>
-  console.log(`Server started on PORT ${process.env.PORT}`)
+  console.log(`Server running on port ${process.env.PORT}`)
 );
 
 const io = require("socket.io")(server, {

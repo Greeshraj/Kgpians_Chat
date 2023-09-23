@@ -153,23 +153,23 @@ const SideDrawer = () => {
 
         {/* App Name Section */}
         <Text fontSize="2xl" fontFamily="Work sans">
-          Bit Chat
+          Kgpian's Chat
         </Text>
 
         {/* User Profile and Bell Icon Section */}
         <div>
           <Menu>
-            <MenuButton p="1" className="notification-badge-container">
-              <BellIcon fontSize="2xl" m="1" />
+            {/* <MenuButton p="1" className="notification-badge-container">
+              
 
               {notification.length > 0 && (
                 <span className="notification-badge">
                   {notification.length > 9 ? "9+" : notification.length}
                 </span>
               )}
-            </MenuButton>
+            </MenuButton> */}
 
-            <MenuList>
+            {/* <MenuList>
               {!notification.length && <Text pl="2">No New Messages</Text>}
               {notification.map((notif) => (
                 <MenuItem
@@ -185,10 +185,10 @@ const SideDrawer = () => {
                         user,
                         notif.chat[0].users
                       )}`}
-                  {/* Change chat[0] to chat from server side */}
+                  
                 </MenuItem>
               ))}
-            </MenuList>
+            </MenuList> */}
           </Menu>
 
           <Menu>

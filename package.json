@@ -1,5 +1,5 @@
 {
-  "name": "bitchat",
+  "name": "fastchat",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "client": "npm start --prefix client",
     "server": "nodemon server.js"
   },
-  "author": "Rohit Tewari",
+  "author": "Everyone",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

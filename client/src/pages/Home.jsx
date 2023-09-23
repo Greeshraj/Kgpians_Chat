@@ -1,13 +1,4 @@
-import {
-  Container,
-  Box,
-  Text,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-} from "@chakra-ui/react";
+import {Container,Box,Text,Tab,TabList,TabPanel,TabPanels,Tabs} from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -30,22 +21,22 @@ const Home = () => {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        // bg="white"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        // borderRadius="lg"
+        // borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans" textAlign="center">
-          Bit Chat
+        <Text fontSize="4xl" fontFamily="Fuggles" textAlign="center">
+          Kgpian's Chat
         </Text>
       </Box>
 
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box style={{ color: 'white' ,background:'#5B5656'}}>
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab style={{color:'white'}}>Login</Tab>
+            <Tab style={{color:'white'}}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

@@ -8,7 +8,7 @@ const UserSchema = mongoose.Schema(
     pic: {
       type: String,
       default:
-        "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+        "https://th.bing.com/th/id/OIP.UhQisvy1ruI10k2xqfvFqAHaLj?pid=ImgDet&rs=1",
     },
   },
   { timestamps: true }

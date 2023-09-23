@@ -1,14 +1,4 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Stack,
-  useToast,
-} from "@chakra-ui/react";
+import {Button,FormControl,FormLabel,Input,InputGroup,InputLeftElement,InputRightElement,Stack,useToast} from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +23,6 @@ const Signup = () => {
   const handleUploadPicture = async (e) => {
     setLoading(true);
 
-    // If no image selected
     if (e.target.files[0] === undefined) {
       return toast({
         title: "Please select an image",
@@ -45,7 +34,6 @@ const Signup = () => {
       });
     }
 
-    // Check if the type of image is jpeg or png
     if (
       e.target.files[0].type === "image/jpeg" ||
       e.target.files[0].type === "image/png"
@@ -75,7 +63,6 @@ const Signup = () => {
         setLoading(false);
       }
     } else {
-      console.log("Hello");
       setLoading(false);
       return toast({
         title: "Please select an image",
@@ -91,7 +78,6 @@ const Signup = () => {
   const submitHandler = async () => {
     setLoading(true);
 
-    // If anything is missing
     if (
       !credentials.name ||
       !credentials.email ||
@@ -109,7 +95,6 @@ const Signup = () => {
       });
     }
 
-    // If password and confirm password doesn't match
     if (credentials.password !== credentials.confirmPassword) {
       setLoading(false);
       return toast({
@@ -122,7 +107,7 @@ const Signup = () => {
       });
     }
 
-    // Now submit the data
+  
     try {
       const response = await fetch("/api/user", {
         method: "POST",
@@ -200,9 +185,7 @@ const Signup = () => {
           <FormLabel htmlFor="password">Password</FormLabel>
           <InputGroup>
             <InputRightElement w="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
-                {show ? "Hide" : "Show"}
-              </Button>
+              
             </InputRightElement>
             <Input
               type={show ? "text" : "password"}
@@ -220,9 +203,7 @@ const Signup = () => {
           <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
           <InputGroup>
             <InputRightElement w="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
-                {show ? "Hide" : "Show"}
-              </Button>
+               
             </InputRightElement>
             <Input
               type={show ? "text" : "password"}
@@ -268,7 +249,8 @@ const Signup = () => {
 
       <Button
         colorScheme="blue"
-        width="100%"
+        width="20%"
+       
         style={{ marginTop: 15 }}
         onClick={() => submitHandler()}
         isLoading={loading}

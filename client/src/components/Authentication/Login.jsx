@@ -1,13 +1,4 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Stack,
-  useToast,
-} from "@chakra-ui/react";
+import {Button,FormControl,FormLabel,Input,InputGroup,InputRightElement,Stack,useToast} from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -95,7 +86,7 @@ const Login = () => {
             type="email"
             name="email"
             value={credentials.email}
-            placeholder="Enter Your Email"
+            placeholder="Enter Your Email id"
             onChange={(e) => handleCredentials(e)}
           />
         </FormControl>
@@ -106,9 +97,9 @@ const Login = () => {
           <FormLabel htmlFor="password">Password</FormLabel>
           <InputGroup>
             <InputRightElement w="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
+              {/* <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? "Hide" : "Show"}
-              </Button>
+              </Button> */}
             </InputRightElement>
             <Input
               type={show ? "text" : "password"}
@@ -123,7 +114,7 @@ const Login = () => {
 
       <Button
         colorScheme="blue"
-        width="100%"
+        width="20%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
@@ -131,7 +122,7 @@ const Login = () => {
         Login
       </Button>
 
-      <Button
+      {/* <Button
         variant="solid"
         colorScheme="red"
         width="100%"
@@ -143,7 +134,7 @@ const Login = () => {
           className="fas fa-user-alt"
           style={{ fontSize: "15px", marginRight: 8 }}
         /> Get Guest User Credentials
-      </Button>
+      </Button> */}
     </Stack>
   );
 };
