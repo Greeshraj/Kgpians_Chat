@@ -41,7 +41,8 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
+    origin:"https://kgpianschat.onrender.com"
   },
   pingTimeout: 60 * 1000,
 });
